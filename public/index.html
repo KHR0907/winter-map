@@ -66,10 +66,17 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBkeN-7dscyTUsvxfsD-2WNGgmxBEbnWE&callback=initMap"
     ></script>
     <script src ="JS/bicycleApi.js" ></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
 </head>
 <body>
 
 
+<div>
 
 
 <nav class="navbar bg-body-tertiary fixed-top">
@@ -92,7 +99,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" id="info" aria-current="page" href="#">winter map</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="web/bigbang.html">music</a>
@@ -120,10 +127,36 @@
         </div>
     </div>
 </nav>
-
-<div id="map" style="height:100vh">
-
+    <div id="map" style="height:100vh"></div>
 </div>
+
+<script type="text/javascript">
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "100",
+        "hideDuration": "1000",
+        "timeOut": "1500",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+
+    window.onload=function(){
+        toastr.warning('겨울철 결빙사고 다발구간을 알려주는 서비스입니다.');
+    };
+
+    $('#info').on('click', function(){
+        toastr.warning('겨울철 결빙사고 다발구간을 알려주는 서비스입니다.');
+    });
+</script>
 
 </body>
 </html>

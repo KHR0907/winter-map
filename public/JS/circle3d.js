@@ -1,7 +1,7 @@
     console.clear();
 
     // Get the canvas element from the DOM
-    const canvas = document.querySelector("#scene");
+    const canvas = document.getElementById("circle");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
@@ -22,9 +22,9 @@
     /* ====== CONSTANTS ===== */
     /* ====================== */
     /* Some of those constants may change if the user resizes their screen but I still strongly believe they belong to the Constants part of the variables */
-    const DOTS_AMOUNT = 1000; // Amount of dots on the screen
-    const DOT_RADIUS = 14; // Radius of the dots
-    let GLOBE_RADIUS = width * 0.7; // Radius of the globe
+    const DOTS_AMOUNT = 400; // Amount of dots on the screen
+    const DOT_RADIUS = 5; // Radius of the dots
+    let GLOBE_RADIUS = width * 0.1; // Radius of the globe
     let GLOBE_CENTER_Z = -GLOBE_RADIUS; // Z value of the globe center
     let PROJECTION_CENTER_X = width / 2; // X center of the canvas HTML
     let PROJECTION_CENTER_Y = height / 2; // Y center of the canvas HTML
@@ -95,7 +95,7 @@
     ctx.clearRect(0, 0, width, height);
 
     // Increase the globe rotation
-    rotation = a * 0.0004;
+    rotation = a * 0.0001;
 
     const sineRotation = Math.sin(rotation); // Sine of the rotation
     const cosineRotation = Math.cos(rotation); // Cosine of the rotation

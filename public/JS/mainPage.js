@@ -42,8 +42,8 @@ function draw() {
     let eachDeg = 180 / part
 
     ctx.beginPath()
-    for (let i = 0; i <= part; i++) {
-        ctx.arc(geom.x, geom.y, geom.radius, geom.statrAngle, -toRadian(i * eachDeg), geom.anticlockwise)
+    for (let i = 1; i <= part; i++) {
+        ctx.arc(geom.x, geom.y, geom.radius, geom.statrAngle, -toRadian(i*eachDeg), geom.anticlockwise)
         ctx.lineTo(geom.x, geom.y)
     }
     ctx.stroke()

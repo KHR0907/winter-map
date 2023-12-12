@@ -8,6 +8,9 @@ body {
 
 canvas {
     box-sizing: border-box;
-    width : 100%;
-    padding : 0px;
+}
+
+.type-wrap {
+    align-items: center;
+    text-align: center;"
 }

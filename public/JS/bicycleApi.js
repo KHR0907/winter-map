@@ -40,8 +40,24 @@ function drawMap(locations){
             "click",
             (function (marker, i) {
                     return function () {
-                        infowindow.setContent(locations[i][0]);
-                        infowindow.open(map,marker);
+
+                        var totalAccidents = locations[i][3] + locations[i][4];
+                        var warningCount = Math.floor(totalAccidents / 3); // Calculate the number of warning images
+
+
+                        infowindow.setContent(
+                            `<h6><b>${locations[i][0]}</b></h6>
+
+                        위험도 : 
+                        <script type="application/javascript">
+                            var warningCount = ${warningCount};
+                        </script>
+                        ${'<img src=\'../img/warning.png\' width=\'20px\' height=\'20px\'>'.repeat(warningCount)}
+                        <br>
+                        발생건수: ${locations[i][3]}
+                        <br>
+                        사상자수: ${locations[i][4]}`);
+                        infowindow.open(map, marker);
                     }
                 })(marker, i)
         );
